@@ -16,4 +16,6 @@ type LevelObjectHacking struct {
 	Unknown0013 []int
 	Unknown0015 []int
 	Unknown0017 []int
+
+	ClassData []int
 }

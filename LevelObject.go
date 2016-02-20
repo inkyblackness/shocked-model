@@ -10,6 +10,8 @@ type LevelObject struct {
 	BaseProperties LevelObjectBaseProperties `json:"properties"`
 
 	Hacking LevelObjectHacking
+
+	Links []Link `json:"links"`
 }
 
 type LevelObjectHacking struct {

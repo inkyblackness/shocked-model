@@ -7,6 +7,8 @@ type TileProperties struct {
 	CeilingHeight *HeightUnit `json:"ceilingHeight"`
 	SlopeHeight   *HeightUnit `json:"slopeHeight"`
 
+	CalculatedWallHeights *CalculatedWallHeights `json:"calculatedWallHeights"`
+
 	RealWorld *RealWorldTileProperties `json:"realWorld"`
 	//Cyberspace *CyberspaceTileProperties
 }

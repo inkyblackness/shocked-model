@@ -4,6 +4,6 @@ package model
 type Levels struct {
 	Referable
 
-	// Items refers to the available levels.
-	Items []Identifiable `json:"items"`
+	// List refers to the available levels.
+	List []Level `json:"list"`
 }

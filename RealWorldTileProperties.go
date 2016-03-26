@@ -7,4 +7,7 @@ type RealWorldTileProperties struct {
 
 	FloorTextureRotations   *int `json:"floorTextureRotations"`
 	CeilingTextureRotations *int `json:"ceilingTextureRotations"`
+
+	UseAdjacentWallTexture *bool       `json:"useAdjacentWallTexture"`
+	WallTextureOffset      *HeightUnit `json:"wallTextureOffset"`
 }

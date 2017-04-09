@@ -46,10 +46,13 @@ type DataStore interface {
 	// LevelObjects requests all objects of the level.
 	LevelObjects(projectID string, archiveID string, levelID int,
 		onSuccess func(objects *LevelObjects), onFailure FailureFunc)
-	// AddLevelObject requests to add a new object to the level
+	// AddLevelObject requests to add a new object to the level.
 	AddLevelObject(projectID string, archiveID string, levelID int, template LevelObjectTemplate,
 		onSuccess func(object LevelObject), onFailure FailureFunc)
-	// RemoveLevelObject requests to remove an object from the level
+	// RemoveLevelObject requests to remove an object from the level.
 	RemoveLevelObject(projectID string, archiveID string, levelID int, objectID int,
 		onSuccess func(), onFailure FailureFunc)
+	// SetLevelObject requests to update object properties.
+	SetLevelObject(projectID string, archiveID string, levelID int, objectID int, properties *LevelObjectProperties,
+		onSuccess func(properties *LevelObjectProperties), onFailure FailureFunc)
 }

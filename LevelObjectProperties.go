@@ -12,4 +12,9 @@ type LevelObjectProperties struct {
 	Z     *int `json:"z"`
 
 	ClassData []byte `json:"classData"`
+
+	RotationX *int
+	RotationY *int
+	RotationZ *int
+	Hitpoints *int
 }

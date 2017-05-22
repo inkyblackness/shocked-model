@@ -14,4 +14,7 @@ type RealWorldTileProperties struct {
 
 	FloorHazard   *bool
 	CeilingHazard *bool
+
+	FloorShadow   *int
+	CeilingShadow *int
 }

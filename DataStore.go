@@ -58,4 +58,11 @@ type DataStore interface {
 	// SetLevelObject requests to update object properties.
 	SetLevelObject(projectID string, archiveID string, levelID int, objectID int, properties *LevelObjectProperties,
 		onSuccess func(properties *LevelObjectProperties), onFailure FailureFunc)
+
+	// LevelSurveillanceObjects requests all surveillance objects of the identified level.
+	LevelSurveillanceObjects(projectID string, archiveID string, levelID int,
+		onSuccess func(objects []SurveillanceObject), onFailure FailureFunc)
+	// SetLevelSurveillanceObject requests to set the properties of one surveillance object.
+	SetLevelSurveillanceObject(projectID string, archiveID string, levelID int, surveillanceIndex int, data SurveillanceObject,
+		onSuccess func(objects []SurveillanceObject), onFailure FailureFunc)
 }

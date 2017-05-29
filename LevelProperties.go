@@ -1,8 +1,7 @@
 package model
 
+// LevelProperties contains basic level information.
 type LevelProperties struct {
-	HeightShift    int  `json:"heightShift"`
-	CyberspaceFlag bool `json:"cyberspaceFlag"`
-
-	// Name string (?)
+	HeightShift    *int
+	CyberspaceFlag *bool
 }

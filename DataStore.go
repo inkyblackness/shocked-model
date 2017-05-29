@@ -26,6 +26,12 @@ type DataStore interface {
 	// Levels queries all levels of a project.
 	Levels(projectID string, archiveID string, onSuccess func(levels []Level), onFailure FailureFunc)
 
+	// LevelProperties requests the basic properties of a level.
+	LevelProperties(projectID string, archiveID string, levelID int, onSuccess func(properties LevelProperties), onFailure FailureFunc)
+	// SetLevelProperties requests to update basic properties of a level.
+	SetLevelProperties(projectID string, archiveID string, levelID int, properties LevelProperties,
+		onSuccess func(properties LevelProperties), onFailure FailureFunc)
+
 	// LevelTextures queries the texture IDs for a level.
 	LevelTextures(projectID string, archiveID string, levelID int, onSuccess func(textureIDs []int), onFailure FailureFunc)
 	// SetLevelTextures requests to set the list of textures for a level.

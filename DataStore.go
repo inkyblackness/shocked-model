@@ -38,7 +38,10 @@ type DataStore interface {
 	SetLevelTextures(projectID string, archiveID string, levelID int, textureIDs []int, onSuccess func(textureIDs []int), onFailure FailureFunc)
 
 	// Textures queries all texture information of a project.
-	Textures(projectID string, onSuccess func(textures []Texture), onFailure FailureFunc)
+	Textures(projectID string, onSuccess func(textures []TextureProperties), onFailure FailureFunc)
+	// SetTextureProperties requests to change properties of a single texture.
+	SetTextureProperties(projectID string, textureID int, newProperties *TextureProperties,
+		onSuccess func(properties *TextureProperties), onFailure FailureFunc)
 	// TextureBitmap queries the texture bitmap of a texture.
 	TextureBitmap(projectID string, textureID int, size string, onSuccess func(bmp *RawBitmap), onFailure FailureFunc)
 

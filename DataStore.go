@@ -36,6 +36,12 @@ type DataStore interface {
 	LevelTextures(projectID string, archiveID string, levelID int, onSuccess func(textureIDs []int), onFailure FailureFunc)
 	// SetLevelTextures requests to set the list of textures for a level.
 	SetLevelTextures(projectID string, archiveID string, levelID int, textureIDs []int, onSuccess func(textureIDs []int), onFailure FailureFunc)
+	// LevelTextureAnimations queries the animation properties of texture groups.
+	LevelTextureAnimations(projectID string, archiveID string, levelID int,
+		onSuccess func(animations []TextureAnimation), onFailure FailureFunc)
+	// SetLevelTextureAnimation requests to change the properties of an animated texture group.
+	SetLevelTextureAnimation(projectID string, archiveID string, levelID int, animationGroup int, properties TextureAnimation,
+		onSuccess func(animations []TextureAnimation), onFailure FailureFunc)
 
 	// Textures queries all texture information of a project.
 	Textures(projectID string, onSuccess func(textures []TextureProperties), onFailure FailureFunc)

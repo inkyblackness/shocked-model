@@ -21,6 +21,13 @@ type DataStore interface {
 	SetGameObject(projectID string, class, subclass, objType int, properties *GameObjectProperties,
 		onSuccess func(properties *GameObjectProperties), onFailure FailureFunc)
 
+	// ElectronicMessage queries the data of a specific electronic message.
+	ElectronicMessage(projectID string, messageType ElectronicMessageType, id int,
+		onSuccess func(message ElectronicMessage), onFailure FailureFunc)
+	// SetElectronicMessage requests to update the properties of a specific electronic message.
+	SetElectronicMessage(projectID string, messageType ElectronicMessageType, id int, message ElectronicMessage,
+		onSuccess func(message ElectronicMessage), onFailure FailureFunc)
+
 	// Palette queries a palette.
 	Palette(projectID string, paletteID string, onSuccess func(colors [256]Color), onFailure FailureFunc)
 	// Levels queries all levels of a project.

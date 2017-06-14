@@ -13,6 +13,13 @@ type DataStore interface {
 	// Font queries a specific font.
 	Font(projectID string, fontID int, onSuccess func(font *Font), onFailure FailureFunc)
 
+	// Bitmap queries the data of a bitmap resource.
+	Bitmap(projectID string, key ResourceKey,
+		onSuccess func(ResourceKey, *RawBitmap), onFailure FailureFunc)
+	// SetBitmap requests to set the data of a bitmap resource.
+	SetBitmap(projectID string, key ResourceKey, bmp *RawBitmap,
+		onSuccess func(ResourceKey, *RawBitmap), onFailure FailureFunc)
+
 	// GameObjects queries the basic properties of all objects in the project.
 	GameObjects(projectID string, onSuccess func(objects []GameObject), onFailure FailureFunc)
 	// GameObjectIcon queries the icon bitmap of a game object.

@@ -64,6 +64,9 @@ type DataStore interface {
 		onSuccess func(properties *TextureProperties), onFailure FailureFunc)
 	// TextureBitmap queries the texture bitmap of a texture.
 	TextureBitmap(projectID string, textureID int, size string, onSuccess func(bmp *RawBitmap), onFailure FailureFunc)
+	// SetTextureBitmap requests to update the bitmap of a texture.
+	SetTextureBitmap(projectID string, textureID int, size string, bmp *RawBitmap,
+		onSuccess func(bmp *RawBitmap), onFailure FailureFunc)
 
 	// Tiles queries the complete tile map of a level.
 	Tiles(projectID string, archiveID string, levelID int, onSuccess func(tiles Tiles), onFailure FailureFunc)

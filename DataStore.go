@@ -20,6 +20,13 @@ type DataStore interface {
 	SetBitmap(projectID string, key ResourceKey, bmp *RawBitmap,
 		onSuccess func(ResourceKey, *RawBitmap), onFailure FailureFunc)
 
+	// Text queries the data of a text resource.
+	Text(projectID string, key ResourceKey,
+		onSuccess func(ResourceKey, string), onFailure FailureFunc)
+	// SetText requests to set the data of a text resource.
+	SetText(projectID string, key ResourceKey, text string,
+		onSuccess func(ResourceKey, string), onFailure FailureFunc)
+
 	// GameObjects queries the basic properties of all objects in the project.
 	GameObjects(projectID string, onSuccess func(objects []GameObject), onFailure FailureFunc)
 	// GameObjectIcon queries the icon bitmap of a game object.

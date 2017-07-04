@@ -15,9 +15,11 @@ const (
 	ResourceTypeLogCategories = ResourceType(0x0870)
 	// ResourceTypeScreenMessages contains the messages shown on screens.
 	ResourceTypeScreenMessages = ResourceType(0x0877)
+	// ResourceTypeInfoNodeMessages contains the short text fragments found in cyberspace of 8/5/6 nodes.
+	ResourceTypeInfoNodeMessages = ResourceType(0x0878)
 	// ResourceTypeAccessCardNames contains the names of the access cards.
 	ResourceTypeAccessCardNames = ResourceType(0x0879)
-	// ResourceTypeDataletMessages contains the short text fragments found in cyberspace.
+	// ResourceTypeDataletMessages contains the short text fragments found in cyberspace of 8/5/8 nodes.
 	ResourceTypeDataletMessages = ResourceType(0x087A)
 
 	// ResourceTypePaperTexts refers to the texts written on lose papers.

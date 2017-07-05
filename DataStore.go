@@ -1,5 +1,9 @@
 package model
 
+import (
+	"github.com/inkyblackness/res/audio"
+)
+
 // FailureFunc is for failed queries.
 type FailureFunc func()
 
@@ -41,6 +45,12 @@ type DataStore interface {
 	// SetElectronicMessage requests to update the properties of a specific electronic message.
 	SetElectronicMessage(projectID string, messageType ElectronicMessageType, id int, message ElectronicMessage,
 		onSuccess func(message ElectronicMessage), onFailure FailureFunc)
+	// ElectronicMessageAudio queries the audio part of a specific electronic message.
+	ElectronicMessageAudio(projectID string, messageType ElectronicMessageType, id int, language ResourceLanguage,
+		onSuccess func(data audio.SoundData), onFailure FailureFunc)
+	// SetElectronicMessageAudio requests to update the audio part of a specific electronic message.
+	SetElectronicMessageAudio(projectID string, messageType ElectronicMessageType, id int, language ResourceLanguage, data audio.SoundData,
+		onSuccess func(), onFailure FailureFunc)
 
 	// Palette queries a palette.
 	Palette(projectID string, paletteID string, onSuccess func(colors [256]Color), onFailure FailureFunc)

@@ -31,6 +31,13 @@ type DataStore interface {
 	SetText(projectID string, key ResourceKey, text string,
 		onSuccess func(ResourceKey, string), onFailure FailureFunc)
 
+	// Audio queries the data of an audio resource.
+	Audio(projectID string, key ResourceKey,
+		onSuccess func(ResourceKey, audio.SoundData), onFailure FailureFunc)
+	// SetAudio requests to set the audio of a text resource.
+	SetAudio(projectID string, key ResourceKey, data audio.SoundData,
+		onSuccess func(ResourceKey), onFailure FailureFunc)
+
 	// GameObjects queries the basic properties of all objects in the project.
 	GameObjects(projectID string, onSuccess func(objects []GameObject), onFailure FailureFunc)
 	// GameObjectIcon queries the icon bitmap of a game object.
